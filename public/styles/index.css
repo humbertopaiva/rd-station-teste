@@ -1,3 +1,95 @@
+/*********************************************************** GENERIC STYLES */
+
+h1,
+h2,
+h3 {
+	font-weight: bolder;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Darker Grotesque", sans-serif;
+}
+
+h1,
+.h-lg {
+	font-size: 40px;
+	line-height: 100%;
+
+	@media (min-width: 600px) {
+		font-size: 56px;
+	}
+}
+
+h2,
+.h-md {
+	font-size: 32px;
+	line-height: 100%;
+
+	@media (min-width: 600px) {
+		font-size: 40px;
+	}
+}
+
+h3,
+.h-sm {
+	font-size: 24px;
+	line-height: 110%;
+
+	@media (min-width: 600px) {
+		font-size: 32px;
+	}
+}
+
+h4,
+.h-xs {
+	font-size: 20px;
+	line-height: 110%;
+	font-weight: bolder;
+
+	@media (min-width: 600px) {
+		font-size: 24px;
+	}
+}
+
+h5,
+.s-sm {
+	font-size: 14px;
+	line-height: 140%;
+}
+
+h6,
+.s-xs {
+	font-size: 14px;
+	line-height: 120%;
+}
+
+p,
+em,
+strong,
+ul,
+li {
+	font-family: "Nunito Sans", sans-serif;
+	list-style: none;
+}
+
+.b-lg {
+	font-size: 20px;
+	line-height: 100%;
+}
+
+.b-md {
+	font-size: 16px;
+	line-height: 100%;
+}
+
+.b-sm {
+	font-size: 14px;
+	line-height: 100%;
+}
+
 .l-wrapper {
 	min-width: 100vw;
 }
@@ -6,23 +98,58 @@
 	margin: 0 auto;
 	max-width: 1440px;
 	width: 100%;
+	padding: 0 108px;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
+/*********************************************************** GENERIC STYLES - END */
+
+/*********************************************************** HEADER */
+
 .c-header {
 	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-	padding: 2rem 0;
 }
 
 .c-header__content {
 	display: flex;
-	padding: 50px;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 24px 0;
 }
 
 .c-logo {
 	width: 174px;
+}
+
+.c-navmenu ul {
+	display: flex;
+	align-items: center;
+	gap: 64px;
+	font-weight: bold;
+}
+
+.l-buttons {
+	display: flex;
+}
+
+.c-header__content__buttons {
+	display: flex;
+	gap: 1rem;
+}
+
+.c-header__content__buttons button {
+}
+
+/*********************************************************** HEADER - END */
+
+/*********************************************************** DROPDOWN MENU */
+
+.c-dropdown {
+	position: relative;
+	display: inline-block;
 }
 
 .c-dropdown__button {
@@ -31,11 +158,6 @@
 	padding: 16px;
 	font-size: 16px;
 	border: none;
-}
-
-.c-dropdown {
-	position: relative;
-	display: inline-block;
 }
 
 .c-dropdown__content {
@@ -66,3 +188,70 @@
 .c-dropdownn:hover .c-dropdown__button {
 	background-color: #3e8e41;
 }
+
+/*********************************************************** DROPDOWN MENU - END */
+
+/*********************************************************** HEADER BUTTONS */
+
+button {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	outline: none;
+	font-family: "Nunito Sans", sans-serif;
+}
+
+button.c-button {
+	color: var(--color-black);
+	font-weight: 800;
+	text-transform: uppercase;
+	padding: 1rem 1.25rem;
+	height: 40px;
+	border: 3px solid var(--color-black);
+	transform-style: preserve-3d;
+	transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+		background 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.c-button--primary {
+	border: 3px solid var(--color-blue-400);
+	background-color: var(--color-blue-400);
+}
+
+button.c-button--primary:hover {
+}
+
+button.c-button--primary img {
+	margin-left: 0.5rem;
+}
+
+button.c-button::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: calc(100% + 2px);
+	left: calc(0% - 2px);
+	width: calc(100% + (2 * 2px));
+	border-top: 4px solid #000;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	height: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+button.c-button:hover {
+	filter: brightness(1.05);
+	transform: translate(0, 0.25em);
+}
+
+button.c-button:active {
+	transform: translate(0em, 0.75em);
+}
+
+button.c-button:active::before {
+	transform: translate3d(0, 0, -1em);
+}
+
+/*********************************************************** HEADER BUTTONS - END */
