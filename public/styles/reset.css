@@ -18,3 +18,12 @@ a {
 	color: inherit;
 	cursor: pointer;
 }
+
+button {
+	border: none;
+	font-family: "Nunito Sans", sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+}

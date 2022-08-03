@@ -16,3 +16,8 @@
 
 	--color-white: #fff;
 }
+
+body,
+html {
+	font-family: "Nunito Sans", sans-serif;
+}
