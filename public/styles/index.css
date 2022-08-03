@@ -565,12 +565,12 @@ form .c-form__content {
 
 .l-hero__subsession-container {
 	background-color: var(--color-blue-800);
-	margin-top: -450px;
+	margin-top: -550px;
 }
 
 .c-hero__subsession {
 	padding: 24px;
-	min-height: 330px;
+	min-height: 400px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -578,7 +578,7 @@ form .c-form__content {
 }
 
 .c-hero__subsession__texts {
-	max-width: 450px;
+	max-width: 600px;
 	color: var(--color-white);
 	padding-right: 16px;
 }
@@ -670,10 +670,12 @@ div.c-hero__subsession__form-space {
 	margin-top: 220px;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap-reverse;
 }
 
 .c-benefits__content__img figure img {
 	max-width: 500px;
+	width: 100%;
 }
 
 .c-benefits__content__list {
@@ -687,6 +689,7 @@ div.c-hero__subsession__form-space {
 
 .c-benefits__content__list p {
 	margin-bottom: 24px;
+	width: 85%;
 }
 
 .c-benefits__list__item {
@@ -698,6 +701,20 @@ div.c-hero__subsession__form-space {
 	width: 18px;
 	margin-right: 19px;
 	margin-top: 4px;
+}
+
+@media screen and (max-width: 1200px) {
+	.c-benefits__content {
+		margin-top: 40px;
+	}
+
+	.c-benefits__list__item {
+		padding-right: 24px;
+	}
+
+	.c-benefits__content__img figure {
+		padding: 16px;
+	}
 }
 
 /*********************************************************** BENEFITS - END */
