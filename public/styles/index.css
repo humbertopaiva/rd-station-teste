@@ -663,3 +663,41 @@ div.c-hero__subsession__form-space {
 }
 
 /*********************************************************** HERO - END */
+
+/*********************************************************** BENEFITS */
+
+.c-benefits__content {
+	margin-top: 220px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.c-benefits__content__img figure img {
+	max-width: 500px;
+}
+
+.c-benefits__content__list {
+	max-width: 482px;
+	padding-left: 32px;
+}
+
+.c-benefits__content__list h2 {
+	margin-bottom: 24px;
+}
+
+.c-benefits__content__list p {
+	margin-bottom: 24px;
+}
+
+.c-benefits__list__item {
+	display: flex;
+	align-items: flex-start;
+}
+
+.c-benefits__list__item img {
+	width: 18px;
+	margin-right: 19px;
+	margin-top: 4px;
+}
+
+/*********************************************************** BENEFITS - END */
