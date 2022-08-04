@@ -454,13 +454,15 @@ button.c-button:active::before {
 	flex-direction: column;
 	margin-top: 120px;
 	margin-bottom: 288px;
-
 	padding-right: 16px;
 }
 
 .c-hero__content__texts h1 {
 	margin-bottom: 40px;
-	max-width: 450px;
+	max-width: 600px;
+	font-size: 56px;
+	font-weight: 900;
+	line-height: 100%;
 }
 
 .c-hero__content__texts span {
@@ -899,3 +901,43 @@ div.c-hero__subsession__form-space {
 }
 
 /*********************************************************** DEMO - END */
+
+/*********************************************************** ACCOUNT  */
+
+.l-account__container {
+	margin: 120px 0;
+}
+
+.c-account__content {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.c-account__content__texts {
+	max-width: 600px;
+}
+
+.c-account__content__texts p {
+	margin: 24px 0;
+}
+
+.c-account__content__grid-logos ul {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 12px;
+	row-gap: 32px;
+}
+
+.c-account__content__grid-logos ul li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.c-account__content__grid-logos ul li small {
+	margin-top: 8px;
+}
+
+/*********************************************************** ACCOUNT - END */
