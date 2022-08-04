@@ -16,6 +16,7 @@ h4 {
 .h-lg {
 	font-size: 40px !important;
 	line-height: 100% !important;
+	font-weight: 900;
 }
 
 .h-md {
@@ -375,8 +376,8 @@ button.c-button--primary {
 }
 
 button.c-button--secondary {
-	border: 3px solid var(--color-orange-300);
-	background-color: var(--color-orange-300) !important;
+	border: 3px solid var(--color-orange-500);
+	background-color: var(--color-orange-500) !important;
 }
 
 button.c-button--primary img {
@@ -813,6 +814,7 @@ div.c-hero__subsession__form-space {
 
 .c-cta__content h2 {
 	max-width: 600px;
+	font-weight: 900;
 }
 
 .c-cta__content p {
@@ -860,3 +862,40 @@ div.c-hero__subsession__form-space {
 }
 
 /*********************************************************** CALL TO ACTION - END */
+
+/*********************************************************** DEMO */
+
+.c-demo__content {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.c-demo__content::before {
+	position: absolute;
+	content: "";
+	right: 0;
+	height: 317px;
+	width: 100vw;
+	z-index: -1;
+	background-color: var(--color-gray-100);
+}
+
+.c-demo__content__texts h3 {
+	font-weight: 900;
+	max-width: 392px;
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.c-demo__content__texts button img {
+	margin-left: 8px;
+}
+
+.c-demo__content__video {
+	padding-right: 103px;
+}
+
+/*********************************************************** DEMO - END */
