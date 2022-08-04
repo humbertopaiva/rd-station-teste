@@ -625,7 +625,7 @@ div.c-hero__subsession__form-space {
 		margin-bottom: 0;
 	}
 	.c-hero__subsession {
-		padding: 0 24px;
+		padding: 0 16px;
 	}
 
 	div.c-hero__subsession__form-space {
@@ -641,7 +641,7 @@ div.c-hero__subsession__form-space {
 @media screen and (max-width: 900px) {
 	.c-hero__content {
 		flex-direction: column;
-		padding: 24px;
+		padding: 16px;
 	}
 
 	.c-hero__content__texts {
@@ -863,6 +863,12 @@ div.c-hero__subsession__form-space {
 	}
 }
 
+@media screen and (max-width: 1200px) {
+	.l-cta__container {
+		padding: 16px;
+	}
+}
+
 /*********************************************************** CALL TO ACTION - END */
 
 /*********************************************************** DEMO */
@@ -873,6 +879,8 @@ div.c-hero__subsession__form-space {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding-right: 103px;
+	margin-top: -100px;
 }
 
 .c-demo__content::before {
@@ -897,7 +905,55 @@ div.c-hero__subsession__form-space {
 }
 
 .c-demo__content__video {
-	padding-right: 103px;
+	position: relative;
+	padding-bottom: 56.25%;
+	max-height: 364px;
+	overflow: hidden;
+	width: 650px;
+}
+
+.c-demo__content__video iframe {
+	position: absolute;
+	top: 135px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	max-height: 365px;
+}
+
+@media screen and (max-width: 1200px) {
+	.c-demo__content {
+		flex-direction: column;
+		padding-right: 0;
+		padding: 16px;
+	}
+
+	.c-demo__content__texts h3 {
+		margin-top: 40px;
+	}
+
+	.c-demo__content__video {
+		position: relative;
+		padding-bottom: 56.25%;
+		max-height: 364px;
+		overflow: visible;
+		max-width: 650px;
+		width: 100%;
+	}
+
+	.c-demo__content__video iframe {
+		position: absolute;
+		top: 40px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.c-demo__content::before {
+		height: 500px;
+	}
 }
 
 /*********************************************************** DEMO - END */
@@ -905,7 +961,7 @@ div.c-hero__subsession__form-space {
 /*********************************************************** ACCOUNT  */
 
 .l-account__container {
-	margin: 120px 0;
+	margin-bottom: 120px;
 }
 
 .c-account__content {
@@ -940,4 +996,74 @@ div.c-hero__subsession__form-space {
 	margin-top: 8px;
 }
 
+@media screen and (max-width: 1200px) {
+	.l-account__container {
+		margin: 40px 0;
+	}
+
+	.c-account__content {
+		flex-direction: column;
+		padding: 24px;
+	}
+
+	.c-account__content__grid-logos ul {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 40px;
+	}
+
+	.c-account__content__grid-logos ul li {
+		width: 30%;
+	}
+}
+
 /*********************************************************** ACCOUNT - END */
+
+/*********************************************************** FOOTER */
+
+.l-footer__container {
+	min-height: 180px;
+	height: 100%;
+	min-width: 100vw;
+	background-color: var(--color-blue-400);
+	padding: 0 108px;
+	display: flex;
+	align-items: center;
+	width: 100vw;
+}
+
+.c-footer__content {
+	padding: 40px;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.c-footer__content__top {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	padding-bottom: 16px;
+}
+
+.c-footer__logo {
+	width: 174px;
+}
+
+.c-footer__social ul {
+	flex: 1;
+	display: flex;
+
+	gap: 16px;
+}
+
+.c-footer__content__bottom {
+	padding-top: 16px;
+	border-top: 2px solid var(--color-blue-200);
+
+	text-align: right;
+}
+
+/*********************************************************** FOOTER - END */

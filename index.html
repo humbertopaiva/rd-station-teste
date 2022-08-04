@@ -154,7 +154,7 @@
 						</p>
 					</div>
 					<div class="c-hero__content__form">
-						<form action="">
+						<form action="/" id="rd-form">
 							<fieldset class="c-form__content">
 								<div class="c-form__content__header">
 									<h3 class="h-sm">
@@ -171,6 +171,7 @@
 									<input
 										type="text"
 										placeholder="Insira seu nome"
+                                        class="rd-form__input"
 									/>
 								</fieldset>
 								<fieldset>
@@ -178,6 +179,8 @@
 									<input
 										type="text"
 										placeholder="Insira seu email"
+                                        class="rd-form__input"
+                                        id="rd-form__email"
 									/>
 								</fieldset>
 								<fieldset>
@@ -185,49 +188,62 @@
 									<input
 										type="text"
 										placeholder="Insira seu número de telefone com DDD"
+                                        class="rd-form__input"
+                                        id="rd-form__phone"
 									/>
 								</fieldset>
 
 								<fieldset>
 									<label>Seu cargo de ocupação</label>
-									<select>
+									<select class="rd-form__select">
 										<optgroup>
 											<option value="" disabled selected>
 												Selecione seu cargo
 											</option>
-											<option>
+											<option   class="rd-form__job__option">
 												Sócio(a) / CEO / Proprietário(a)
 											</option>
-											<option>
+
+											<option class="rd-form__job__option">
 												Diretor(a) de Vendas
 											</option>
-											<option>
+
+											<option class="rd-form__job__option">
 												Diretor(a) de Marketing
 											</option>
-											<option>
+
+											<option class="rd-form__job__option">
 												Gerente de Marketing
 											</option>
-											<option>Gerente de Vendas</option>
-											<option>
+                                            
+											<option class="rd-form__job__option">Gerente de Vendas</option>
+
+											<option class="rd-form__job__option">
 												Coordenador(a)/Supervisor(a) de
 												Marketing
 											</option>
-											<option>
+
+											<option class="rd-form__job__option">
 												Coordenador(a)/Supervisor(a) de
 												Vendas
 											</option>
-											<option>
+
+											<option class="rd-form__job__option">
 												Analista/Assistente de Marketing
 											</option>
-											<option>
+
+											<option class="rd-form__job__option">
 												Analista/Assistente de Vendas
 											</option>
-											<option>
+
+											<option class="rd-form__job__option">
 												Vendedor(a) / Executivo(a) de
 												Contas
 											</option>
-											<option>Estudante</option>
-											<option>Outros Cargos</option>
+
+											<option class="rd-form__job__option">Estudante</option>
+
+											<option class="rd-form__job__option">Outros Cargos</option>
 										</optgroup>
 									</select>
 								</fieldset>
@@ -237,6 +253,7 @@
 									<input
 										type="password"
 										placeholder="Insira uma senha"
+                                        class="rd-form__input"
 									/>
 								</fieldset>
 
@@ -245,24 +262,26 @@
 									<input
 										type="password"
 										placeholder="Confirme a senha inserida"
+                                        class="rd-form__input"
 									/>
 								</fieldset>
 
 								<fieldset class="c-fieldset__radio-box">
 									<label>Qual é o site da sua empresa?</label>
 									<div>
-										<input type="radio" />
+										<input type="radio" class="rd-form__input" />
 										<label>Meu site é:</label>
 									</div>
 									<input
 										type="text"
 										placeholder="Insira o endereço do seu site"
+                                        class="rd-form__input"
 									/>
 								</fieldset>
 
 								<fieldset>
 									<div class="c-fieldset__radio-box">
-										<input type="radio" />
+										<input type="radio" class="rd-form__input" />
 										<label>Ainda não tenho site</label>
 									</div>
 								</fieldset>
@@ -289,8 +308,9 @@
 										</li>
 									</ul>
 									<button
-										type="submit"
+										
 										class="c-button c-button--secondary"
+                                        id="rd-form__button"
 									>
 										Criar minha conta
 									</button>
@@ -585,13 +605,11 @@
 						</div>
 						<div class="c-demo__content__video">
 							<iframe
-								width="649"
-								height="365"
+								
 								src="https://www.youtube.com/embed/lGCesaaLi4s"
-								title="YouTube video player"
+						
 								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
+								
 							></iframe>
 						</div>
 					</div>
@@ -709,7 +727,41 @@
 				</div>
 			</section>
 		</main>
-		<aside></aside>
-		<footer></footer>
+		
+		<footer class=" l-footer__container">
+           
+                <div class="c-footer__content">
+                    <div class="c-footer__content__top">
+                        <img class="c-footer__logo" src="./public/images/rd_logo.svg" alt="RD Station logo">
+                        <div class="c-footer__social">
+                            <ul>
+                                <li>
+                                    <img src="./public/images/twitter_social.svg" alt="twitter icon">
+                                </li>
+                                <li>
+                                    <img src="./public/images/facebook_social.svg" alt="facebook icon">
+                                </li>
+                                <li>
+                                    <img src="./public/images/linkedin_social.svg" alt="linkedin icon">
+                                </li>
+                                <li>
+                                    <img src="./public/images/instagram_social.svg" alt="instagram icon">
+                                </li>
+                                <li>
+                                    <img src="./public/images/youtube_social.svg" alt="youtube icon">
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="c-footer__content__bottom">
+                        <div class="c-footer__policy">
+                            <small>&copy; <strong>RD Station </strong>2021.</small>
+                            <a href="#">Política de Privacidade</a>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+        <script type="module" src="./src/index.js"></script>
 	</body>
 </html>
