@@ -1,6 +1,3 @@
-import { Input } from "./Input.js";
-import { Select } from "./Select.js";
-
 const Form = class From {
 	constructor() {
 		this._form = document.getElementById("rd-form");
@@ -45,157 +42,161 @@ const Form = class From {
 		this._formData = data;
 	}
 
-	// CHECK IF ALL INPUTS ARE VALID
-	checkAllFields = () => {
-		//CHECK ALL INPUTS
+	get button() {
+		return this._button;
+	}
 
-		for (let element of this.formInputs) {
-			const input = new Input(element);
-			if (input) input.IsValid();
-		}
+	// // CHECK IF ALL INPUTS ARE VALID
+	// checkAllFields = () => {
+	// 	//CHECK ALL INPUTS
 
-		// CHECK SELECT
+	// 	for (let element of this.formInputs) {
+	// 		const input = new Input(element);
+	// 		if (input) input.IsValid();
+	// 	}
 
-		if (!this.selectJobInput.value) {
-			const select = new Select(this.selectJobInput);
-			select.createElementError("Escolha seu cargo");
-		} else {
-		}
-	};
+	// 	// CHECK SELECT
 
-	isValid = () => {
-		const errorMessages = document.querySelectorAll(".c-error__text");
-		return !errorMessages.length;
-	};
+	// 	if (!this.selectJobInput.value) {
+	// 		const select = new Select(this.selectJobInput);
+	// 		select.createElementError("Escolha seu cargo");
+	// 	} else {
+	// 	}
+	// };
 
-	handleClick = () => {
-		this.clearErrorMessages();
-		this.checkAllFields();
-		//send data if form is ok
-		if (this.isValid()) {
-			const data = this.createFormData();
-			console.log(data);
+	// isValid = () => {
+	// 	const errorMessages = document.querySelectorAll(".c-error__text");
+	// 	return !errorMessages.length;
+	// };
 
-			if (
-				data.name &&
-				data.email &&
-				data.job &&
-				data.password &&
-				data.phone
-			) {
-				fetch("https://rdstation-signup-psel.herokuapp.com", {
-					method: "POST",
-					body: JSON.stringify(data),
-					headers: {
-						"Content-type": "application/json;charset=UTF-8",
-					},
-				})
-					.then((response) => response.json())
-					.then((json) => console.log(json))
-					.catch((err) => console.log(err));
-			}
-		} else console.log("Formulário inválido!");
-	};
+	// handleClick = () => {
+	// 	this.clearErrorMessages();
+	// 	this.checkAllFields();
+	// 	//send data if form is ok
+	// 	if (this.isValid()) {
+	// 		const data = this.createFormData();
+	// 		console.log(data);
 
-	createFormData = () => {
-		const name = document.getElementById("rd-form__name").value;
-		const email = document.getElementById("rd-form__email").value;
-		const phone = document.getElementById("rd-form__phone").value;
-		const job = document.getElementById("rd-form__selectJob").value;
-		const password = document.getElementById("rd-form__password").value;
-		const site = document.getElementById("rd-form__site-input").value;
+	// 		if (
+	// 			data.name &&
+	// 			data.email &&
+	// 			data.job &&
+	// 			data.password &&
+	// 			data.phone
+	// 		) {
+	// 			fetch("https://rdstation-signup-psel.herokuapp.com", {
+	// 				method: "POST",
+	// 				body: JSON.stringify(data),
+	// 				headers: {
+	// 					"Content-type": "application/json;charset=UTF-8",
+	// 				},
+	// 			})
+	// 				.then((response) => response.json())
+	// 				.then((json) => console.log(json))
+	// 				.catch((err) => console.log(err));
+	// 		}
+	// 	} else console.log("Formulário inválido!");
+	// };
 
-		return { name, email, phone, job, password, site };
-	};
+	// createFormData = () => {
+	// 	const name = document.getElementById("rd-form__name").value;
+	// 	const email = document.getElementById("rd-form__email").value;
+	// 	const phone = document.getElementById("rd-form__phone").value;
+	// 	const job = document.getElementById("rd-form__selectJob").value;
+	// 	const password = document.getElementById("rd-form__password").value;
+	// 	const site = document.getElementById("rd-form__site-input").value;
 
-	//add mask to phone input
-	addPhoneMask = () => {
-		const phoneInput = document.getElementById("rd-form__phone");
-		phoneInput.onkeyup = (e) => {
-			const input = e.target;
+	// 	return { name, email, phone, job, password, site };
+	// };
 
-			input.value = input.value
-				.replace(/\D/g, "")
-				.replace(/^(\d{2})(\d)/g, "($1) $2");
+	// //add mask to phone input
+	// addPhoneMask = () => {
+	// 	const phoneInput = document.getElementById("rd-form__phone");
+	// 	phoneInput.onkeyup = (e) => {
+	// 		const input = e.target;
 
-			//create an Array with 2 positions, with code and phone number
-			const numberArray = input.value.split(" ");
+	// 		input.value = input.value
+	// 			.replace(/\D/g, "")
+	// 			.replace(/^(\d{2})(\d)/g, "($1) $2");
 
-			//get the code number from  the numberArray
-			const ddd = numberArray[0]
-				.replace(`${"("}`, "")
-				.replace(`${")"}`, "");
+	// 		//create an Array with 2 positions, with code and phone number
+	// 		const numberArray = input.value.split(" ");
 
-			//get the phone number from the numberArray
-			const phoneNumber = numberArray[1];
-			const phoneNumberArray = phoneNumber && phoneNumber.split("");
+	// 		//get the code number from  the numberArray
+	// 		const ddd = numberArray[0]
+	// 			.replace(`${"("}`, "")
+	// 			.replace(`${")"}`, "");
 
-			if (phoneNumberArray) {
-				const numberInputValue = `(${ddd}) ${phoneNumberArray
-					.slice(0, 9)
-					.join("")}`;
+	// 		//get the phone number from the numberArray
+	// 		const phoneNumber = numberArray[1];
+	// 		const phoneNumberArray = phoneNumber && phoneNumber.split("");
 
-				input.value = numberInputValue.replace(/(\d)(\d{4})$/, "$1-$2");
-			}
-		};
-	};
+	// 		if (phoneNumberArray) {
+	// 			const numberInputValue = `(${ddd}) ${phoneNumberArray
+	// 				.slice(0, 9)
+	// 				.join("")}`;
 
-	setRadioButtonsListeners = () => {
-		const siteInputElement = document.getElementById("rd-form__site-input");
+	// 			input.value = numberInputValue.replace(/(\d)(\d{4})$/, "$1-$2");
+	// 		}
+	// 	};
+	// };
 
-		const radioButtonDisabled = document.getElementById(
-			"rd-form__radio-siteDisabled"
-		);
+	// setRadioButtonsListeners = () => {
+	// 	const siteInputElement = document.getElementById("rd-form__site-input");
 
-		const radioButtonEnabled = document.getElementById(
-			"rd-form__radio-siteEnabled"
-		);
+	// 	const radioButtonDisabled = document.getElementById(
+	// 		"rd-form__radio-siteDisabled"
+	// 	);
 
-		radioButtonDisabled.addEventListener("change", () => {
-			if (radioButtonDisabled.checked) {
-				siteInputElement.disabled = true;
-				siteInputElement.value = "";
-				siteInputElement.classList.remove("c-error__input");
-				this.removeSibling(siteInputElement);
-				this.removeSibling(siteInputElement);
-			}
-		});
+	// 	const radioButtonEnabled = document.getElementById(
+	// 		"rd-form__radio-siteEnabled"
+	// 	);
 
-		radioButtonEnabled.addEventListener("change", () => {
-			if (radioButtonEnabled.checked) {
-				siteInputElement.disabled = false;
-				siteInputElement.classList.remove("c-error__input");
-				this.removeSibling(siteInputElement);
-				this.removeSibling(siteInputElement);
-			}
-		});
-	};
+	// 	radioButtonDisabled.addEventListener("change", () => {
+	// 		if (radioButtonDisabled.checked) {
+	// 			siteInputElement.disabled = true;
+	// 			siteInputElement.value = "";
+	// 			siteInputElement.classList.remove("c-error__input");
+	// 			this.removeSibling(siteInputElement);
+	// 			this.removeSibling(siteInputElement);
+	// 		}
+	// 	});
 
-	removeSibling = (input) => {
-		const sibling = input.nextElementSibling;
-		if (sibling) sibling.parentNode.removeChild(sibling);
-	};
+	// 	radioButtonEnabled.addEventListener("change", () => {
+	// 		if (radioButtonEnabled.checked) {
+	// 			siteInputElement.disabled = false;
+	// 			siteInputElement.classList.remove("c-error__input");
+	// 			this.removeSibling(siteInputElement);
+	// 			this.removeSibling(siteInputElement);
+	// 		}
+	// 	});
+	// };
 
-	clearErrorMessages = () => {
-		const errorMessages = document.querySelectorAll(".c-error__text");
+	// removeSibling = (input) => {
+	// 	const sibling = input.nextElementSibling;
+	// 	if (sibling) sibling.parentNode.removeChild(sibling);
+	// };
 
-		for (let message of errorMessages) {
-			message.parentNode.removeChild(message);
-		}
-	};
+	// clearErrorMessages = () => {
+	// 	const errorMessages = document.querySelectorAll(".c-error__text");
 
-	events = () => {
-		window.onload = () => {
-			//add click event to button
-			this._button.addEventListener("click", (event) => {
-				event.preventDefault();
-				this.handleClick();
-			});
+	// 	for (let message of errorMessages) {
+	// 		message.parentNode.removeChild(message);
+	// 	}
+	// };
 
-			this.setRadioButtonsListeners();
-			this.addPhoneMask();
-		};
-	};
+	// events = () => {
+	// 	window.onload = () => {
+	// 		//add click event to button
+	// 		this._button.addEventListener("click", (event) => {
+	// 			event.preventDefault();
+	// 			this.handleClick();
+	// 		});
+
+	// 		this.setRadioButtonsListeners();
+	// 		this.addPhoneMask();
+	// 	};
+	// };
 };
 
 export { Form };

@@ -1,6 +1,6 @@
-import { Form } from "./models/Form.js";
+import { FormController } from "./controllers/FormController.js";
 
-const form = new Form();
-form.events();
+const Form = new FormController();
+Form.events();
 
 console.log("Oi");
