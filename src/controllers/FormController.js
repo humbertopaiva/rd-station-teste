@@ -49,9 +49,6 @@ const FormController = class FormController {
 	};
 
 	openLoadingModal = () => {
-		const successMessage = document.getElementById("modal__success");
-		successMessage.style.display = "none";
-
 		const modal = document.getElementById("modal");
 		modal.style.display = "flex";
 
@@ -66,17 +63,27 @@ const FormController = class FormController {
 	closeLoadingModal = () => {
 		const modal = document.getElementById("modal");
 		modal.style.display = "none";
-
-		const successMessage = document.getElementById("modal__success");
-		successMessage.style.display = "none";
 	};
 
 	openSuccessMessage = () => {
-		const successMessage = document.getElementById("modal__success");
-		const spinner = document.getElementById("modal__spinner");
+		console.log(this.form.form);
+		this.form.form.innerHTML = "";
+		const div = document.createElement("div");
+		const h2 = document.createElement("h2");
+		const img = document.createElement("img");
 
-		spinner.style.display = "none";
-		successMessage.style.display = "flex";
+		h2.innerText = "Obrigado! Entraremos em contato.";
+		h2.style.textAlign = "center";
+		h2.style.marginTop = "16px";
+		img.alt = "Imagem de agradecimento";
+		img.src = "../../public/images/thank.svg";
+		div.appendChild(img);
+		div.appendChild(h2);
+
+		this.form.form.appendChild(div);
+
+		const formContainer = document.getElementById("rd-form__container");
+		formContainer.classList.add("rd-form__container");
 	};
 
 	changeInputVisibility = (input) => {
@@ -102,20 +109,20 @@ const FormController = class FormController {
 		password.addEventListener("click", () => {
 			this.changeInputVisibility(passwordInput);
 			if (passwordInput.type === "password") {
-				passwordIcon.src = "../../public/images/eye.svg";
-			} else passwordIcon.src = "../../public/images/eye_closed.svg";
+				passwordIcon.src = "../../public/images/eye_closed.svg";
+			} else passwordIcon.src = "../../public/images/eye.svg";
 		});
 
 		confirmPassword.addEventListener("click", () => {
 			this.changeInputVisibility(confirmPasswordInput);
 			if (confirmPasswordInput.type === "password") {
-				confirmPasswordIcon.src = "../../public/images/eye.svg";
-			} else
 				confirmPasswordIcon.src = "../../public/images/eye_closed.svg";
+			} else confirmPasswordIcon.src = "../../public/images/eye.svg";
 		});
 	};
 
 	handleClick = () => {
+		this.openLoadingModal();
 		this.clearErrorMessages();
 		this.checkAllFields();
 
@@ -141,12 +148,8 @@ const FormController = class FormController {
 					.then((response) => response.json())
 					.then((json) => {
 						console.log(json);
-
-						setTimeout(this.closeLoadingModal(), 5000);
+						this.closeLoadingModal();
 						this.openSuccessMessage();
-
-						this.form.form.reset();
-						alert("Formulário enviado");
 					})
 					.catch((err) => alert("Erro ao enviar os dados."));
 			}
@@ -241,17 +244,15 @@ const FormController = class FormController {
 	};
 
 	events = () => {
-		window.onload = () => {
-			//add click event to button
-			this.form.button.addEventListener("click", (event) => {
-				event.preventDefault();
-				this.handleClick();
-			});
+		//add click event to button
+		this.form.button.addEventListener("click", (event) => {
+			event.preventDefault();
+			this.handleClick();
+		});
 
-			this.setPasswordEvents();
-			this.setRadioButtonsListeners();
-			this.addPhoneMask();
-		};
+		this.setPasswordEvents();
+		this.setRadioButtonsListeners();
+		this.addPhoneMask();
 	};
 };
 

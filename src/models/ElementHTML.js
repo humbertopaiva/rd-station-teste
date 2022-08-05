@@ -1,7 +1,6 @@
 const ElementHTML = class ElementHTML {
 	constructor(element) {
 		this._element = element;
-		console.log("Element", element);
 		this._value = element && element.value;
 	}
 

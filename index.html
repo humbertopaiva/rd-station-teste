@@ -75,9 +75,11 @@
 								class="c-header__content__menu-icon c-header__content__menu-icon--active"
 								src="./public/images/menu.svg"
 								alt="menu icon"
+								id="icon-button"
 							/>
 						</button>
 					</div>
+					<!-- DESKTOP NAV MENU -->
 					<nav class="c-header__content__nav" id="navmenu">
 						<ul class="b-md">
 							<li>
@@ -162,7 +164,111 @@
 							</li>
 						</ul>
 					</nav>
-					<div class="c-header__content__buttons" id="header-buttons">
+					<!-- MOBILE NAV MENU -->
+					<nav
+						class="c-header__content__nav c-header__content__nav-mobile"
+						id="navmenu-mobile"
+					>
+						<ul class="b-md">
+							<li>
+								<a href="#">Menu 1</a>
+							</li>
+							<li class="c-dropdown">
+								<button
+									type="button"
+									id="chevron-dropdown-mobile"
+								>
+									Menu 2
+									<img
+										src="./public/images/chevron_down.svg"
+										alt="chevron icon"
+									/>
+								</button>
+								<div
+									class="c-dropdown__content"
+									id="dropdown-menu-mobile"
+								>
+									<div class="c-dropdown__content__session">
+										<h4>Metodologia</h4>
+										<ul>
+											<li>
+												<a href="#"
+													>Tudo sobre Inbound
+													Marketing</a
+												>
+											</li>
+										</ul>
+									</div>
+									<div class="c-dropdown__content__session">
+										<h4>Cursos</h4>
+										<ul>
+											<li>
+												<a href="#">RD University</a>
+											</li>
+											<li>
+												<a href="#"
+													>Introdução ao Inbound
+													Marketing</a
+												>
+											</li>
+											<li>
+												<a href="#"
+													>RD Station Marketing
+													Basic</a
+												>
+											</li>
+										</ul>
+									</div>
+									<div class="c-dropdown__content__session">
+										<h4>Ferramentas</h4>
+										<ul>
+											<li>
+												<a href="#"
+													>Avalie seu funil de
+													vendas</a
+												>
+											</li>
+											<li>
+												<a href="#"
+													>Compare suas métricas de
+													Email Marketing</a
+												>
+											</li>
+											<li>
+												<a href="#"
+													>Calcule o ROI do RD Station
+													Marketing</a
+												>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="#">Menu 3</a>
+							</li>
+							<li>
+								<a href="#">Menu 4</a>
+							</li>
+							<li>
+								<a href="#">Menu 5</a>
+							</li>
+						</ul>
+						<div
+							class="c-header__content__buttons"
+							id="header-buttons-mobile"
+						>
+							<button class="c-button">Button</button>
+							<button class="c-button c-button--primary">
+								Button
+								<img src="./public/images/arrow_right.svg" />
+							</button>
+						</div>
+					</nav>
+					<div
+						class="c-header__content__buttons"
+						id="header-buttons-desktop"
+					>
 						<button class="c-button">Button</button>
 						<button class="c-button c-button--primary">
 							Button
@@ -190,7 +296,7 @@
 							alcançar mais resultados.
 						</p>
 					</div>
-					<div class="c-hero__content__form">
+					<div class="c-hero__content__form" id="rd-form__container">
 						<form id="rd-form">
 							<fieldset class="c-form__content">
 								<div class="c-form__content__header">
@@ -330,7 +436,7 @@
 										id="button-reveal-password"
 									>
 										<img
-											src="./public/images/eye.svg"
+											src="./public/images/eye_closed.svg"
 											alt="reveal icon"
 											id="password-reveal-icon"
 										/>
@@ -352,7 +458,7 @@
 										type="button"
 									>
 										<img
-											src="./public/images/eye.svg"
+											src="./public/images/eye_closed.svg"
 											alt="reveal icon"
 											id="confirm-reveal-icon"
 										/>
@@ -442,6 +548,9 @@
 
 			<!-- COMPLEMENT -->
 			<section class="l-hero__subsession-container">
+				<div class="c-hero__subsession__shape">
+					<img src="./public/images/shape.svg" alt="shape" />
+				</div>
 				<div class="l-wrapper__content c-hero__subsession">
 					<div class="c-hero__subsession__texts">
 						<h2 class="h-md">
@@ -467,8 +576,15 @@
 			<!-- FEATURES -->
 			<section>
 				<div class="l-wrapper__content l-benefits__container">
+					<div class="c-benefits__bg"></div>
 					<div class="c-benefits__content">
 						<div class="c-benefits__content__img">
+							<div class="c-benefits__shape">
+								<img
+									src="./public/images/shape.svg"
+									alt="shape"
+								/>
+							</div>
 							<figure>
 								<img
 									src="./public/images/img-rdoer.png"

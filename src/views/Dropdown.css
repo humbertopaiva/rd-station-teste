@@ -1,5 +1,6 @@
 .c-dropdown {
 	position: relative;
+	z-index: 20;
 }
 
 .c-dropdown__button {
@@ -74,11 +75,28 @@
 }
 
 @media screen and (max-width: 1200px) {
-	#dropdown-menu {
-		display: inline-block;
+	#dropdown-menu-mobile {
+		display: none;
+		flex-direction: column;
 		position: relative;
 		box-shadow: none;
 		width: 100%;
+		margin: 0;
+	}
+
+	#chevron-dropdown-mobile {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.c-dropdown__content {
+		position: relative;
+		min-width: 160px;
+
+		z-index: 0;
+		background-color: var(--color-white);
 	}
 
 	.c-dropdown__content__session ul li {

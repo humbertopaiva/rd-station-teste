@@ -15,11 +15,12 @@
 .l-hero__container__bg::before {
 	content: "";
 	position: absolute;
-	width: 4000px;
+	width: 2000px;
 	height: 2000px;
-	right: -800px;
+	right: 0;
+	left: 2300px;
 	transform: skew(58deg);
-	background-color: var(--color-gray-100);
+	background-color: var(--color-white);
 }
 
 .c-hero__content {
@@ -38,6 +39,7 @@
 	margin-top: 120px;
 	margin-bottom: 288px;
 	padding-right: 16px;
+	min-height: 650px;
 }
 
 .c-hero__content__texts h1 {
@@ -64,6 +66,7 @@
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	margin-top: 40px;
 	padding: 32px;
+	z-index: 10;
 }
 
 div.c-hero__content__form form fieldset {
@@ -205,6 +208,8 @@ form .c-form__content {
 .l-hero__subsession-container {
 	background-color: var(--color-blue-800);
 	margin-top: -550px;
+	position: relative;
+	overflow: hidden;
 }
 
 .c-hero__subsession {
@@ -233,26 +238,30 @@ form .c-form__content {
 	margin-top: 24px;
 }
 
+.c-hero__subsession__shape {
+	position: absolute;
+	top: -3px;
+}
+
 div.c-hero__subsession__form-space {
 	min-width: 516px;
 	height: 300px;
 	background-color: var(--color-blue-800);
 }
 
+.rd-form__container {
+	max-height: 500px;
+	position: relative;
+}
+
 @media screen and (max-width: 1200px) {
 	.l-hero__container__bg::before {
-		content: "";
-		position: absolute;
-		width: 2500px;
-		height: 2000px;
 		right: -700px;
-		z-index: -1;
-		transform: skew(42deg);
-		background-color: var(--color-gray-100);
 	}
 
 	.c-hero__content__texts {
 		margin-bottom: 0;
+		min-height: 50px;
 	}
 	.c-hero__subsession {
 		padding: 0 16px;
@@ -271,7 +280,7 @@ div.c-hero__subsession__form-space {
 @media screen and (max-width: 900px) {
 	.c-hero__content {
 		flex-direction: column;
-		padding: 16px;
+		padding: 24px;
 	}
 
 	.c-hero__content__texts {
@@ -279,7 +288,7 @@ div.c-hero__subsession__form-space {
 		flex-direction: column;
 		margin-top: 40px;
 		margin-bottom: 0;
-		padding-right: 16px;
+		padding: 0;
 	}
 }
 
@@ -287,8 +296,7 @@ div.c-hero__subsession__form-space {
 	.l-hero__container__bg::before {
 		content: "";
 		position: absolute;
-		width: 2500px;
-		height: 2000px;
+
 		right: -800px;
 		z-index: -1;
 		transform: skew(42deg);
@@ -297,5 +305,11 @@ div.c-hero__subsession__form-space {
 
 	.c-hero__content__form {
 		align-self: center;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.l-hero__container__bg::before {
+		left: 3000px;
 	}
 }

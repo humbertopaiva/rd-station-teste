@@ -3,6 +3,11 @@
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap-reverse;
+	overflow: hidden;
+}
+
+.c-benefits__content__img {
+	position: relative;
 }
 
 .c-benefits__content__img figure img {
@@ -36,7 +41,34 @@
 	margin-top: 4px;
 }
 
+.c-benefits__shape {
+	position: absolute;
+	right: 0;
+	top: -4px;
+	transform: rotate(90deg);
+}
+
+.l-wrapper__content .l-benefits__container {
+	overflow: hidden;
+}
+
+div.c-benefits__bg {
+	width: 4000px;
+	height: 1900px;
+	position: absolute;
+	background-color: var(--color-gray-100);
+	top: 0;
+	left: -150px;
+
+	z-index: -20;
+	transform: skewX(45deg);
+}
+
 @media screen and (max-width: 1200px) {
+	.l-benefits__container {
+		position: relative;
+	}
+
 	.c-benefits__content {
 		margin-top: 40px;
 	}
@@ -52,5 +84,17 @@
 	figcaption {
 		display: none;
 		color: var(--color-white);
+	}
+
+	div.c-benefits__bg {
+		width: 4000px;
+		height: 2100px;
+		position: absolute;
+
+		top: -350px;
+		bottom: -500px;
+
+		z-index: -20;
+		transform: skewX(45deg);
 	}
 }

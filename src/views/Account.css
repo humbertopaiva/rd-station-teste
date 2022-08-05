@@ -66,7 +66,6 @@
 		justify-content: center;
 		margin-top: 40px;
 		width: 100%;
-		background-color: aqua;
 	}
 
 	.c-account__content__grid-logos ul li {
@@ -109,8 +108,8 @@
 		align-items: center;
 		justify-content: center;
 		margin-top: 40px;
+		margin-bottom: 40px;
 		width: 100%;
-		background-color: aqua;
 	}
 
 	.c-account__content__grid-logos ul li {

@@ -22,9 +22,26 @@ const MenuController = class MenuController {
 	handleClick = () => {
 		if (this.menu.openButton) {
 			this.menu.openButton.addEventListener("click", () => {
-				if (!this.open) this.showNavMenu();
+				if (!this.open) {
+					this.showNavMenu();
+					console.log(this.menu.openButton);
 
-				if (this.open) this.hideNavMenu();
+					if (this.menu.openButton.id === "navmenu__open-button") {
+						const iconButton =
+							document.getElementById("icon-button");
+						iconButton.src = "../../public/images/chevron_down.svg";
+					}
+				}
+
+				if (this.open) {
+					this.hideNavMenu();
+
+					if (this.menu.openButton.id === "navmenu__open-button") {
+						const iconButton =
+							document.getElementById("icon-button");
+						iconButton.src = "../../public/images/menu.svg";
+					}
+				}
 
 				this.open = !this.open;
 			});
@@ -32,17 +49,15 @@ const MenuController = class MenuController {
 	};
 
 	showNavMenu = () => {
-		this.menu.element.classList.add("m-menu--open");
+		this.menu.element.style.display = "flex";
 	};
 
 	hideNavMenu = () => {
-		this.menu.element.classList.remove("m-menu--close");
+		this.menu.element.style.display = "";
 	};
 
 	events = () => {
-		window.onload = () => {
-			this.handleClick();
-		};
+		this.handleClick();
 	};
 };
 
