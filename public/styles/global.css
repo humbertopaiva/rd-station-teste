@@ -21,3 +21,99 @@ body,
 html {
 	font-family: "Nunito Sans", sans-serif;
 }
+
+/*********************************************************** GENERIC STYLES */
+
+h1,
+h2,
+h3 {
+	font-weight: bolder;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Darker Grotesque", sans-serif;
+}
+
+h2,
+.h-lg {
+	font-size: 40px;
+	line-height: 100%;
+	font-weight: 900;
+}
+
+.h-md {
+	font-size: 32px;
+	line-height: 100%;
+}
+
+.h-sm {
+	font-size: 24px;
+	line-height: 110%;
+}
+
+.h-xs {
+	font-size: 20px;
+	line-height: 110%;
+	font-weight: bolder;
+}
+
+.s-sm {
+	font-size: 14px;
+	line-height: 140%;
+}
+
+.s-xs {
+	font-size: 14px;
+	line-height: 120%;
+}
+
+p,
+em,
+strong,
+ul,
+li {
+	font-family: "Nunito Sans", sans-serif;
+	list-style: none;
+}
+
+.b-lg {
+	font-size: 20px !important;
+	line-height: 100%;
+}
+
+.b-md {
+	font-size: 16px !important;
+	line-height: 150%;
+}
+
+.b-sm {
+	font-size: 14px;
+	line-height: 100%;
+}
+
+.m-link {
+	text-decoration: underline;
+	color: var(--color-blue-400);
+}
+
+.l-wrapper {
+	min-width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.l-wrapper__content {
+	margin: 0 auto;
+	max-width: 1440px;
+	width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+	.l-wrapper__content {
+		padding: 0 108px;
+	}
+}

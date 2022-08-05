@@ -13,136 +13,173 @@
 		/>
 		<link rel="stylesheet" href="./public/styles/reset.css" />
 		<link rel="stylesheet" href="./public/styles/global.css" />
-		<link rel="stylesheet" href="./public/styles/index.css" />
+		<link rel="stylesheet" href="./src/views/Header.css" />
+		<link rel="stylesheet" href="./src/views/Hero.css" />
+		<link rel="stylesheet" href="./src/views/Account.css" />
+		<link rel="stylesheet" href="./src/views/Demo.css" />
+		<link rel="stylesheet" href="./src/views/CallToAction.css" />
+		<link rel="stylesheet" href="./src/views/MarketingTools.css" />
+		<link rel="stylesheet" href="./src/views/Benefits.css" />
+		<link rel="stylesheet" href="./src/views/Button.css" />
+		<link rel="stylesheet" href="./src/views/Dropdown.css" />
+		<link rel="stylesheet" href="./src/views/ErrorMessages.css" />
+		<link rel="stylesheet" href="./src/views/Footer.css" />
+		<link rel="stylesheet" href="./src/views/Modal.css" />
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+		/>
 	</head>
 	<body>
-		<header class="l-wrapper c-header">
+		<div class="modal" id="modal">
+			<div id="modal__success">
+				<h2>Formulário enviado com sucesso!</h2>
+				<img
+					src="./public/images/bw.svg"
+					alt="Duas pessoas comemorando"
+				/>
+			</div>
+			<div class="modal__spinner" id="modal__spinner">
+				<div class="lds-spinner">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+		<header class="l-wrapper l-header__container">
 			<div class="l-wrapper__content">
 				<div class="c-header__content">
-					<div
-						class="c-header__content__left c-header__content__left--responsive"
-					>
-						<img
-							class="c-logo"
-							src="./public/images/logo.svg"
-							alt="logo RD Station"
-						/>
-						<img
-							class="c-header__content__menu-icon c-header__content__menu-icon--active"
-							src="./public/images/menu.svg"
-							alt="menu icon"
-						/>
-					</div>
-					<div class="c-header__content__right">
-						<nav class="c-navmenu c-navmenu--responsive">
-							<ul class="b-md">
-								<li><a>Menu 1</a></li>
-
-								<!-- SELECT -->
-								<li class="c-dropdown">
-									<button class="c-dropdown__button">
-										Menu 2
-										<img
-											src="./public/images/chevron_down.svg"
-											alt="chevron icon"
-										/>
-									</button>
-
-									<div
-										class="c-dropdown__content c-dropdown__content--open"
-									>
-										<div
-											class="c-dropdown__content__session"
-										>
-											<h4>Metodologia</h4>
-											<ul>
-												<li>
-													<a href="#"
-														>Tudo sobre Inbound
-														Marketing</a
-													>
-												</li>
-											</ul>
-										</div>
-										<div
-											class="c-dropdown__content__session"
-										>
-											<h4>Cursos</h4>
-											<ul>
-												<li>
-													<a href="#"
-														>RD University</a
-													>
-												</li>
-												<li>
-													<a href="#"
-														>Introdução ao Inbound
-														Marketing</a
-													>
-												</li>
-												<li>
-													<a href="#"
-														>RD Station Marketing
-														Basic</a
-													>
-												</li>
-											</ul>
-										</div>
-										<div
-											class="c-dropdown__content__session"
-										>
-											<h4>Ferramentas</h4>
-											<ul>
-												<li>
-													<a href="#"
-														>Avalie seu funil de
-														vendas</a
-													>
-												</li>
-												<li>
-													<a href="#"
-														>Compare suas métricas
-														de Email Marketing</a
-													>
-												</li>
-												<li>
-													<a href="#"
-														>Calcule o ROI do RD
-														Station Marketing</a
-													>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								<li>
-									<a>Menu 3</a>
-								</li>
-								<li>
-									<a> Menu 4 </a>
-								</li>
-								<li><a>Menu 5</a></li>
-							</ul>
-						</nav>
-
-						<div class="c-header__content__buttons">
-							<button class="c-button">Button</button>
-							<button class="c-button c-button--primary">
-								Button
-								<img src="./public/images/arrow_right.svg" />
-							</button>
+					<div class="c-header__content__menu">
+						<div class="c-header__content__img">
+							<img
+								src="./public/images/logo.svg"
+								alt="RD Station Logo"
+							/>
 						</div>
+						<button
+							id="navmenu__open-button"
+							class="c-header__content__menu-button"
+						>
+							<img
+								class="c-header__content__menu-icon c-header__content__menu-icon--active"
+								src="./public/images/menu.svg"
+								alt="menu icon"
+							/>
+						</button>
+					</div>
+					<nav class="c-header__content__nav" id="navmenu">
+						<ul class="b-md">
+							<li>
+								<a href="#">Menu 1</a>
+							</li>
+							<li class="c-dropdown">
+								<button href="#">
+									Menu 2
+									<img
+										src="./public/images/chevron_down.svg"
+										alt="chevron icon"
+									/>
+								</button>
+								<div
+									class="c-dropdown__content"
+									id="dropdown-menu"
+								>
+									<div class="c-dropdown__content__session">
+										<h4>Metodologia</h4>
+										<ul>
+											<li>
+												<a href="#"
+													>Tudo sobre Inbound
+													Marketing</a
+												>
+											</li>
+										</ul>
+									</div>
+									<div class="c-dropdown__content__session">
+										<h4>Cursos</h4>
+										<ul>
+											<li>
+												<a href="#">RD University</a>
+											</li>
+											<li>
+												<a href="#"
+													>Introdução ao Inbound
+													Marketing</a
+												>
+											</li>
+											<li>
+												<a href="#"
+													>RD Station Marketing
+													Basic</a
+												>
+											</li>
+										</ul>
+									</div>
+									<div class="c-dropdown__content__session">
+										<h4>Ferramentas</h4>
+										<ul>
+											<li>
+												<a href="#"
+													>Avalie seu funil de
+													vendas</a
+												>
+											</li>
+											<li>
+												<a href="#"
+													>Compare suas métricas de
+													Email Marketing</a
+												>
+											</li>
+											<li>
+												<a href="#"
+													>Calcule o ROI do RD Station
+													Marketing</a
+												>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="#">Menu 3</a>
+							</li>
+							<li>
+								<a href="#">Menu 4</a>
+							</li>
+							<li>
+								<a href="#">Menu 5</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="c-header__content__buttons" id="header-buttons">
+						<button class="c-button">Button</button>
+						<button class="c-button c-button--primary">
+							Button
+							<img src="./public/images/arrow_right.svg" />
+						</button>
 					</div>
 				</div>
 			</div>
 		</header>
+
 		<main class="l-wrapper">
 			<!-- HERO -->
 			<section class="l-hero__container">
 				<div class="l-hero__container__bg"></div>
 				<div class="l-wrapper__content c-hero__content">
 					<div class="c-hero__content__texts">
-						<h1 >
+						<h1>
 							Gere mais <span>oportunidades</span> <br />
 							para seu negócio
 						</h1>
@@ -171,9 +208,9 @@
 									<input
 										type="text"
 										placeholder="Insira seu nome"
-                                        class="rd-form__input"
-                                        name="Name"
-                                        id="rd-form__name"
+										class="rd-form__input"
+										name="Name"
+										id="rd-form__name"
 									/>
 								</fieldset>
 								<fieldset>
@@ -181,9 +218,9 @@
 									<input
 										type="text"
 										placeholder="Insira seu email"
-                                        class="rd-form__input"
-                                        id="rd-form__email"
-                                        name="Email"
+										class="rd-form__input"
+										id="rd-form__email"
+										name="Email"
 									/>
 								</fieldset>
 								<fieldset>
@@ -191,110 +228,181 @@
 									<input
 										type="text"
 										placeholder="Insira seu número de telefone com DDD"
-                                        class="rd-form__input"
-                                        id="rd-form__phone"
-                                        name="Phone"
-
+										class="rd-form__input"
+										id="rd-form__phone"
+										name="Phone"
 									/>
 								</fieldset>
 
 								<fieldset>
 									<label>Seu cargo de ocupação</label>
-									<select class="rd-form__select" id="rd-form__selectJob">
+									<select
+										class="rd-form__select"
+										id="rd-form__selectJob"
+									>
 										<optgroup>
 											<option value="" disabled selected>
 												Selecione seu cargo
 											</option>
-											<option   class="rd-form__job__option">
+											<option
+												class="rd-form__job__option"
+											>
 												Sócio(a) / CEO / Proprietário(a)
 											</option>
 
-											<option class="rd-form__job__option">
+											<option
+												class="rd-form__job__option"
+											>
 												Diretor(a) de Vendas
 											</option>
 
-											<option class="rd-form__job__option">
+											<option
+												class="rd-form__job__option"
+											>
 												Diretor(a) de Marketing
 											</option>
 
-											<option class="rd-form__job__option">
+											<option
+												class="rd-form__job__option"
+											>
 												Gerente de Marketing
 											</option>
-                                            
-											<option class="rd-form__job__option">Gerente de Vendas</option>
 
-											<option class="rd-form__job__option">
+											<option
+												class="rd-form__job__option"
+											>
+												Gerente de Vendas
+											</option>
+
+											<option
+												class="rd-form__job__option"
+											>
 												Coordenador(a)/Supervisor(a) de
 												Marketing
 											</option>
 
-											<option class="rd-form__job__option">
+											<option
+												class="rd-form__job__option"
+											>
 												Coordenador(a)/Supervisor(a) de
 												Vendas
 											</option>
 
-											<option class="rd-form__job__option">
+											<option
+												class="rd-form__job__option"
+											>
 												Analista/Assistente de Marketing
 											</option>
 
-											<option class="rd-form__job__option">
+											<option
+												class="rd-form__job__option"
+											>
 												Analista/Assistente de Vendas
 											</option>
 
-											<option class="rd-form__job__option">
+											<option
+												class="rd-form__job__option"
+											>
 												Vendedor(a) / Executivo(a) de
 												Contas
 											</option>
 
-											<option class="rd-form__job__option">Estudante</option>
+											<option
+												class="rd-form__job__option"
+											>
+												Estudante
+											</option>
 
-											<option class="rd-form__job__option">Outros Cargos</option>
+											<option
+												class="rd-form__job__option"
+											>
+												Outros Cargos
+											</option>
 										</optgroup>
 									</select>
 								</fieldset>
 
-								<fieldset>
+								<fieldset class="c-form__fieldset__password">
 									<label>Crie uma senha</label>
+									<button
+										type="button"
+										class="c-form__reveal"
+										id="button-reveal-password"
+									>
+										<img
+											src="./public/images/eye.svg"
+											alt="reveal icon"
+											id="password-reveal-icon"
+										/>
+									</button>
 									<input
 										type="password"
 										placeholder="Insira uma senha"
-                                        class="rd-form__input"
-                                        name="Password"
-                                        id="rd-form__password"
+										class="rd-form__input"
+										name="Password"
+										id="rd-form__password"
 									/>
 								</fieldset>
 
-								<fieldset>
+								<fieldset class="c-form__fieldset__password">
 									<label>Confirme sua senha</label>
+									<button
+										class="c-form__reveal"
+										id="button-reveal-confirm"
+										type="button"
+									>
+										<img
+											src="./public/images/eye.svg"
+											alt="reveal icon"
+											id="confirm-reveal-icon"
+										/>
+									</button>
 									<input
 										type="password"
 										placeholder="Confirme a senha inserida"
-                                        class="rd-form__input"
-                                        name="Confirm"
-                                        id="rd-form__passwordConfirm"
+										class="rd-form__input"
+										name="Confirm"
+										id="rd-form__passwordConfirm"
 									/>
 								</fieldset>
 
 								<fieldset class="c-fieldset__radio-box">
 									<label>Qual é o site da sua empresa?</label>
-									<div>
-										<input type="radio" checked name="radio-site" id="rd-form__radio-siteEnabled" class="rd-form__input rd-form__input-radio" />
-										<label>Meu site é:</label>
+									<div class="c-fieldset__radio-box__row">
+										<input
+											type="radio"
+											checked
+											name="radio-site"
+											id="rd-form__radio-siteEnabled"
+											class="rd-form__input rd-form__input-radio"
+										/>
+										<label for="rd-form__radio-siteEnabled"
+											>Meu site é:</label
+										>
 									</div>
 									<input
 										type="text"
 										placeholder="Insira o endereço do seu site"
-                                        class="rd-form__input"
-                                        name="Site"
-                                        id="rd-form__site-input"
-                                       
+										class="rd-form__input"
+										name="Site"
+										id="rd-form__site-input"
 									/>
 								</fieldset>
 
 								<fieldset>
 									<div class="c-fieldset__radio-box">
-										<input type="radio" name="radio-site" id="rd-form__radio-siteDisabled" class="rd-form__input rd-form__input-radio" />
-										<label>Ainda não tenho site</label>
+										<div class="c-fieldset__radio-box__row">
+											<input
+												type="radio"
+												name="radio-site"
+												id="rd-form__radio-siteDisabled"
+												class="rd-form__input rd-form__input-radio"
+											/>
+											<label
+												for="rd-form__radio-siteDisabled"
+												>Ainda não tenho site</label
+											>
+										</div>
 									</div>
 								</fieldset>
 
@@ -320,9 +428,8 @@
 										</li>
 									</ul>
 									<button
-										
 										class="c-button c-button--secondary"
-                                        id="rd-form__button"
+										id="rd-form__button"
 									>
 										Criar minha conta
 									</button>
@@ -617,11 +724,8 @@
 						</div>
 						<div class="c-demo__content__video">
 							<iframe
-								
 								src="https://www.youtube.com/embed/lGCesaaLi4s"
-						
 								frameborder="0"
-								
 							></iframe>
 						</div>
 					</div>
@@ -631,16 +735,22 @@
 			<section class="l-wrapper__content">
 				<div class="l-account__container">
 					<div class="c-account__content">
+						<!-- TEXTS -->
 						<div class="c-account__content__texts">
-							<h2 class="h-lg">
-								Torne sua operação de Marketing ainda mais
-								poderosa
-							</h3>
-                            <p class="b-md">O RD Station Marketing se conecta as principais ferramentas nacionais e internacionais </p>
-							<button class="c-button c-button--primary">
-								Criar conta gratuita
-							</button>
+							<div>
+								<h2 class="h-lg">
+									Torne sua operação de Marketing ainda mais
+									poderosa
+								</h2>
+								<p class="b-md">
+									O RD Station Marketing se conecta as
+									principais ferramentas nacionais e
+									internacionais
+								</p>
+							</div>
 						</div>
+
+						<!-- LOGOS -->
 						<div class="c-account__content__grid-logos">
 							<ul>
 								<li>
@@ -650,7 +760,7 @@
 											alt="RD Station Logo"
 										/>
 									</figure>
-                                    <small>RD Station CRM</small>
+									<small>RD Station CRM</small>
 								</li>
 								<li>
 									<figure>
@@ -659,7 +769,7 @@
 											alt="Salesforce logo"
 										/>
 									</figure>
-                                    <small>Salesforce</small>
+									<small>Salesforce</small>
 								</li>
 								<li>
 									<figure>
@@ -668,7 +778,7 @@
 											alt="Google Logo"
 										/>
 									</figure>
-                                    <small>Google</small>
+									<small>Google</small>
 								</li>
 								<li>
 									<figure>
@@ -677,7 +787,7 @@
 											alt="Facebook Logo"
 										/>
 									</figure>
-                                    <small>Facebook</small>
+									<small>Facebook</small>
 								</li>
 								<li>
 									<figure>
@@ -686,7 +796,7 @@
 											alt="Linkedin Logo"
 										/>
 									</figure>
-                                    <small>Linkedin</small>
+									<small>Linkedin</small>
 								</li>
 								<li>
 									<figure>
@@ -695,7 +805,7 @@
 											alt="Wordpress Logo"
 										/>
 									</figure>
-                                    <small>Wordpress</small>
+									<small>Wordpress</small>
 								</li>
 								<li>
 									<figure>
@@ -704,7 +814,7 @@
 											alt="Hotmart Logo"
 										/>
 									</figure>
-                                    <small>Hotmart</small>
+									<small>Hotmart</small>
 								</li>
 								<li>
 									<figure>
@@ -713,7 +823,7 @@
 											alt="PagSeguro Logo"
 										/>
 									</figure>
-                                    <small>PagSeguro</small>
+									<small>PagSeguro</small>
 								</li>
 								<li>
 									<figure>
@@ -722,7 +832,7 @@
 											alt="Shopfy Logo"
 										/>
 									</figure>
-                                    <small>Shopfy</small>
+									<small>Shopfy</small>
 								</li>
 								<li>
 									<figure>
@@ -731,49 +841,76 @@
 											alt="Zapier Logo"
 										/>
 									</figure>
-                                    <small>Zapier</small>
+									<small>Zapier</small>
 								</li>
 							</ul>
+						</div>
+
+						<!-- BUTTONS -->
+						<div class="c-account__content__button">
+							<button class="c-button c-button--primary">
+								Criar conta gratuita
+							</button>
 						</div>
 					</div>
 				</div>
 			</section>
 		</main>
-		
-		<footer class=" l-footer__container">
-           
-                <div class="c-footer__content">
-                    <div class="c-footer__content__top">
-                        <img class="c-footer__logo" src="./public/images/rd_logo.svg" alt="RD Station logo">
-                        <div class="c-footer__social">
-                            <ul>
-                                <li>
-                                    <img src="./public/images/twitter_social.svg" alt="twitter icon">
-                                </li>
-                                <li>
-                                    <img src="./public/images/facebook_social.svg" alt="facebook icon">
-                                </li>
-                                <li>
-                                    <img src="./public/images/linkedin_social.svg" alt="linkedin icon">
-                                </li>
-                                <li>
-                                    <img src="./public/images/instagram_social.svg" alt="instagram icon">
-                                </li>
-                                <li>
-                                    <img src="./public/images/youtube_social.svg" alt="youtube icon">
-                                </li>
-                            </ul>
 
-                        </div>
-                    </div>
-                    <div class="c-footer__content__bottom">
-                        <div class="c-footer__policy">
-                            <small>&copy; <strong>RD Station </strong>2021.</small>
-                            <a href="#">Política de Privacidade</a>
-                        </div>
-                    </div>
-                </div>
-        </footer>
-        <script type="module" src="./src/index.js"></script>
+		<footer class="l-footer__container">
+			<div class="c-footer__content">
+				<div class="c-footer__content__top">
+					<img
+						class="c-footer__logo"
+						src="./public/images/rd_logo.svg"
+						alt="RD Station logo"
+					/>
+					<div class="c-footer__social">
+						<ul>
+							<li>
+								<img
+									src="./public/images/twitter_social.svg"
+									alt="twitter icon"
+								/>
+							</li>
+							<li>
+								<img
+									src="./public/images/facebook_social.svg"
+									alt="facebook icon"
+								/>
+							</li>
+							<li>
+								<img
+									src="./public/images/linkedin_social.svg"
+									alt="linkedin icon"
+								/>
+							</li>
+							<li>
+								<img
+									src="./public/images/instagram_social.svg"
+									alt="instagram icon"
+								/>
+							</li>
+							<li>
+								<img
+									src="./public/images/youtube_social.svg"
+									alt="youtube icon"
+								/>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="c-footer__content__bottom">
+					<div class="c-footer__policy">
+						<small>&copy; <strong>RD Station </strong>2021.</small>
+						<a href="#">Política de Privacidade</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script type="module" src="./src/index.js"></script>
+		<script type="module">
+			import Swiper from "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js";
+		</script>
 	</body>
 </html>

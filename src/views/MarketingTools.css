@@ -1,0 +1,58 @@
+.l-tools__container {
+	margin-top: 120px;
+}
+
+.c-tools__content {
+	display: flex;
+	flex-direction: column;
+}
+
+.c-tools__content h2 {
+	max-width: 550px;
+	font-weight: 900;
+	margin-bottom: 60px;
+	color: var(--color-gray-900);
+}
+
+.c-tools__content__gallery {
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 392px));
+	gap: 24px;
+}
+
+.c-tools__card {
+	max-width: 392px;
+	width: 100%;
+	min-height: 392px;
+	padding: 24px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	transition: all 0.1s ease;
+	cursor: default;
+	background-color: var(--color-white);
+}
+
+.c-tools__card img {
+	width: 64px;
+	height: 64px;
+	object-fit: cover;
+	background-color: var(--color-gray-100);
+	padding: 16px;
+	border-radius: 50%;
+	margin-bottom: 16px;
+}
+
+.c-tools__card h3 {
+	margin-bottom: 16px;
+}
+
+.c-tools__card p {
+	font-size: 16px;
+	padding-bottom: 24px;
+}
+
+@media screen and (max-width: 1200px) {
+	.c-tools__content {
+		padding: 0 16px;
+	}
+}

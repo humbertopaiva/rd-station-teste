@@ -1,0 +1,17 @@
+.c-error__text {
+	color: red;
+	font-size: 12px;
+	padding-top: 6px;
+}
+
+.c-error__input {
+	border: 2px solid red !important;
+}
+
+.m-menu--open {
+	display: flex;
+}
+
+.m-menu--close {
+	display: none;
+}

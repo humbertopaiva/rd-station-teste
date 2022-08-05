@@ -5,6 +5,7 @@ import { SelectController } from "./SelectController.js";
 const FormController = class FormController {
 	constructor() {
 		this._form = new Form();
+		this.events();
 	}
 
 	get form() {
@@ -47,7 +48,72 @@ const FormController = class FormController {
 		return !errorMessages.length;
 	};
 
-	checkPasswordsEqual = () => {};
+	openLoadingModal = () => {
+		const successMessage = document.getElementById("modal__success");
+		successMessage.style.display = "none";
+
+		const modal = document.getElementById("modal");
+		modal.style.display = "flex";
+
+		const spinner = document.getElementById("modal__spinner");
+		spinner.style.display = "flex";
+
+		modal.addEventListener("click", () => {
+			modal.style.display = "none";
+		});
+	};
+
+	closeLoadingModal = () => {
+		const modal = document.getElementById("modal");
+		modal.style.display = "none";
+
+		const successMessage = document.getElementById("modal__success");
+		successMessage.style.display = "none";
+	};
+
+	openSuccessMessage = () => {
+		const successMessage = document.getElementById("modal__success");
+		const spinner = document.getElementById("modal__spinner");
+
+		spinner.style.display = "none";
+		successMessage.style.display = "flex";
+	};
+
+	changeInputVisibility = (input) => {
+		if (input.type === "text") input.type = "password";
+		else input.type = "text";
+	};
+
+	setPasswordEvents = () => {
+		const password = document.getElementById("button-reveal-password");
+		const passwordInput = document.getElementById("rd-form__password");
+		const passwordIcon = document.getElementById("password-reveal-icon");
+
+		const confirmPassword = document.getElementById(
+			"button-reveal-confirm"
+		);
+		const confirmPasswordInput = document.getElementById(
+			"rd-form__passwordConfirm"
+		);
+		const confirmPasswordIcon = document.getElementById(
+			"confirm-reveal-icon"
+		);
+
+		password.addEventListener("click", () => {
+			this.changeInputVisibility(passwordInput);
+			if (passwordInput.type === "password") {
+				passwordIcon.src = "../../public/images/eye.svg";
+			} else passwordIcon.src = "../../public/images/eye_closed.svg";
+		});
+
+		confirmPassword.addEventListener("click", () => {
+			this.changeInputVisibility(confirmPasswordInput);
+			if (confirmPasswordInput.type === "password") {
+				confirmPasswordIcon.src = "../../public/images/eye.svg";
+			} else
+				confirmPasswordIcon.src = "../../public/images/eye_closed.svg";
+		});
+	};
 
 	handleClick = () => {
 		this.clearErrorMessages();
@@ -55,6 +121,7 @@ const FormController = class FormController {
 
 		//send data if form is valid
 		if (this.isValid()) {
+			this.openLoadingModal();
 			const data = this.createFormData();
 
 			if (
@@ -74,10 +141,14 @@ const FormController = class FormController {
 					.then((response) => response.json())
 					.then((json) => {
 						console.log(json);
-						alert("Formulário enviado");
+
+						setTimeout(this.closeLoadingModal(), 5000);
+						this.openSuccessMessage();
+
 						this.form.form.reset();
+						alert("Formulário enviado");
 					})
-					.catch((err) => console.log(err));
+					.catch((err) => alert("Erro ao enviar os dados."));
 			}
 		} else console.log("Formulário inválido!");
 	};
@@ -177,6 +248,7 @@ const FormController = class FormController {
 				this.handleClick();
 			});
 
+			this.setPasswordEvents();
 			this.setRadioButtonsListeners();
 			this.addPhoneMask();
 		};
