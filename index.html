@@ -154,7 +154,7 @@
 						</p>
 					</div>
 					<div class="c-hero__content__form">
-						<form action="/" id="rd-form">
+						<form id="rd-form">
 							<fieldset class="c-form__content">
 								<div class="c-form__content__header">
 									<h3 class="h-sm">
@@ -172,6 +172,8 @@
 										type="text"
 										placeholder="Insira seu nome"
                                         class="rd-form__input"
+                                        name="Name"
+                                        id="rd-form__name"
 									/>
 								</fieldset>
 								<fieldset>
@@ -181,6 +183,7 @@
 										placeholder="Insira seu email"
                                         class="rd-form__input"
                                         id="rd-form__email"
+                                        name="Email"
 									/>
 								</fieldset>
 								<fieldset>
@@ -190,12 +193,14 @@
 										placeholder="Insira seu número de telefone com DDD"
                                         class="rd-form__input"
                                         id="rd-form__phone"
+                                        name="Phone"
+
 									/>
 								</fieldset>
 
 								<fieldset>
 									<label>Seu cargo de ocupação</label>
-									<select class="rd-form__select">
+									<select class="rd-form__select" id="rd-form__selectJob">
 										<optgroup>
 											<option value="" disabled selected>
 												Selecione seu cargo
@@ -254,6 +259,8 @@
 										type="password"
 										placeholder="Insira uma senha"
                                         class="rd-form__input"
+                                        name="Password"
+                                        id="rd-form__password"
 									/>
 								</fieldset>
 
@@ -263,25 +270,29 @@
 										type="password"
 										placeholder="Confirme a senha inserida"
                                         class="rd-form__input"
+                                        name="Confirm"
 									/>
 								</fieldset>
 
 								<fieldset class="c-fieldset__radio-box">
 									<label>Qual é o site da sua empresa?</label>
 									<div>
-										<input type="radio" class="rd-form__input" />
+										<input type="radio" checked name="radio-site" id="rd-form__radio-siteEnabled" class="rd-form__input rd-form__input-radio" />
 										<label>Meu site é:</label>
 									</div>
 									<input
 										type="text"
 										placeholder="Insira o endereço do seu site"
                                         class="rd-form__input"
+                                        name="Site"
+                                        id="rd-form__site-input"
+                                       
 									/>
 								</fieldset>
 
 								<fieldset>
 									<div class="c-fieldset__radio-box">
-										<input type="radio" class="rd-form__input" />
+										<input type="radio" name="radio-site" id="rd-form__radio-siteDisabled" class="rd-form__input rd-form__input-radio" />
 										<label>Ainda não tenho site</label>
 									</div>
 								</fieldset>

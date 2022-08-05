@@ -1067,3 +1067,15 @@ div.c-hero__subsession__form-space {
 }
 
 /*********************************************************** FOOTER - END */
+
+/*********************************************************** FORM */
+
+.c-error__text {
+	color: red;
+	font-size: 12px;
+	padding-top: 6px;
+}
+
+.c-error__input {
+	border: 2px solid red !important;
+}
