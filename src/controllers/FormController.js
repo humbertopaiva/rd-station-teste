@@ -31,17 +31,31 @@ const FormController = class FormController {
 	};
 
 	isValid = () => {
+		const password = document.getElementById("rd-form__password");
+		const confirmedPassword = document.getElementById(
+			"rd-form__passwordConfirm"
+		);
+
+		if (password.value !== confirmedPassword.value) {
+			const confirmedInput = new InputController(confirmedPassword);
+			confirmedInput.input.createElementError(
+				"As senhas precisam ser iguais"
+			);
+		}
+
 		const errorMessages = document.querySelectorAll(".c-error__text");
 		return !errorMessages.length;
 	};
 
+	checkPasswordsEqual = () => {};
+
 	handleClick = () => {
 		this.clearErrorMessages();
 		this.checkAllFields();
-		//send data if form is ok
+
+		//send data if form is valid
 		if (this.isValid()) {
 			const data = this.createFormData();
-			console.log(data);
 
 			if (
 				data.name &&
@@ -58,7 +72,11 @@ const FormController = class FormController {
 					},
 				})
 					.then((response) => response.json())
-					.then((json) => console.log(json))
+					.then((json) => {
+						console.log(json);
+						alert("Formulário enviado");
+						this.form.form.reset();
+					})
 					.catch((err) => console.log(err));
 			}
 		} else console.log("Formulário inválido!");

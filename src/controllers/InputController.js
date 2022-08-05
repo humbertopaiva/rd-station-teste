@@ -95,7 +95,7 @@ const InputController = class InputController {
 		const passwordRegex = new RegExp(
 			/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{6,})$/
 		);
-		console.log("Senha", this.input.value);
+
 		if (
 			!passwordRegex.test(this.input.value) ||
 			this.input.value.length > 10
