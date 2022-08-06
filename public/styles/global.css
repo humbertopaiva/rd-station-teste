@@ -1,10 +1,10 @@
 :root {
-	--color-blue-800: #0b485b;
-	--color-blue-400: #19c1ce;
-	--color-blue-200: #07e5eb;
+	--color-primary-shade-1: #0b485b;
+	--color-primary: #19c1ce;
+	--color-primary-shade-5: #07e5eb;
 
-	--color-orange-500: #f2bf4e;
-	--color-orange-300: #f4ca6d;
+	--color-highlight: #f2bf4e;
+	--color-highlight-2: #f4ca6d;
 
 	--color-black: #000;
 

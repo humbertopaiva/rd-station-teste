@@ -5,7 +5,7 @@
 .c-cta__content {
 	position: relative;
 	overflow: hidden;
-	background-color: var(--color-blue-800);
+	background-color: var(--color-primary-shade-1);
 	padding: 80px 208px;
 	display: flex;
 	flex-direction: column;
@@ -53,13 +53,21 @@
 	.c-cta__content {
 		position: relative;
 		overflow: hidden;
-		background-color: var(--color-blue-800);
+		background-color: var(--color-primary-shade-1);
 		padding: 80px 40px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
 		color: var(--color-white);
+	}
+
+	.l-cta__container {
+		margin: 40px 0;
+	}
+
+	.c-cta__content h2 {
+		font-size: 32px;
 	}
 }
 

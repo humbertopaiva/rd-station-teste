@@ -66,7 +66,6 @@ const FormController = class FormController {
 	};
 
 	openSuccessMessage = () => {
-		console.log(this.form.form);
 		this.form.form.innerHTML = "";
 		const div = document.createElement("div");
 		const h2 = document.createElement("h2");
@@ -122,7 +121,6 @@ const FormController = class FormController {
 	};
 
 	handleClick = () => {
-		this.openLoadingModal();
 		this.clearErrorMessages();
 		this.checkAllFields();
 
@@ -153,7 +151,7 @@ const FormController = class FormController {
 					})
 					.catch((err) => alert("Erro ao enviar os dados."));
 			}
-		} else console.log("Formulário inválido!");
+		}
 	};
 
 	createFormData = () => {

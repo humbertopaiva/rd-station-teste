@@ -45,7 +45,7 @@
 }
 
 .c-dropdown__content__session h4 {
-	color: var(--color-blue-400);
+	color: var(--color-primary);
 	text-transform: uppercase;
 	font-weight: 800;
 }
@@ -89,6 +89,17 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+	}
+
+	#dropdown-mobile-trigger button {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	#dropdown-mobile-trigger button img {
+		width: 14px;
 	}
 
 	.c-dropdown__content {

@@ -9,6 +9,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	margin-top: 40px;
 }
 
 .c-account__content__texts {
@@ -57,6 +58,7 @@
 	.c-account__content {
 		flex-direction: column;
 		padding: 24px;
+		margin-top: 0;
 	}
 
 	.c-account__content__grid-logos ul {
@@ -89,6 +91,10 @@
 
 	.c-account__content__texts p {
 		margin-bottom: 0;
+	}
+
+	.l-account__container {
+		margin-top: 40px;
 	}
 }
 

@@ -79,4 +79,18 @@
 	.c-demo__content::before {
 		height: 500px;
 	}
+
+	.l-demo__container {
+		margin-top: 40px;
+	}
+
+	.c-demo__content::before {
+		position: absolute;
+		content: "";
+		right: 0;
+		height: 317px;
+		width: 100vw;
+		z-index: -1;
+		background-color: var(--color-gray-100);
+	}
 }

@@ -11,7 +11,7 @@ window.onload = () => {
 
 	const DropdownMenu = new MenuController(
 		"dropdown-menu-mobile",
-		"chevron-dropdown"
+		"dropdown-mobile-trigger"
 	);
 
 	const swiper = new Swiper(".swiper", {

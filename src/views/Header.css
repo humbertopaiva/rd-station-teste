@@ -42,7 +42,7 @@
 }
 
 .c-header__content__nav ul li a:hover {
-	color: var(--color-blue-400);
+	color: var(--color-primary);
 }
 
 .c-header__content__nav ul li button {
@@ -99,6 +99,7 @@
 
 	.c-header__content {
 		flex-direction: column;
+		padding: 0;
 	}
 
 	.c-header__content__nav {
@@ -112,6 +113,7 @@
 	.c-header__content__nav ul {
 		flex-direction: column;
 		width: 100%;
+		padding: 16px;
 	}
 
 	.c-header__content__nav ul li {
@@ -125,6 +127,12 @@
 
 	#header-buttons {
 		display: flex;
+	}
+
+	#icon-button {
+		width: 24px;
+		height: 24px;
+		background-color: transparent !important;
 	}
 
 	.c-navmenu {

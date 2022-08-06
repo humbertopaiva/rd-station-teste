@@ -24,12 +24,11 @@ const MenuController = class MenuController {
 			this.menu.openButton.addEventListener("click", () => {
 				if (!this.open) {
 					this.showNavMenu();
-					console.log(this.menu.openButton);
 
 					if (this.menu.openButton.id === "navmenu__open-button") {
 						const iconButton =
 							document.getElementById("icon-button");
-						iconButton.src = "../../public/images/chevron_down.svg";
+						iconButton.src = "../../public/images/close_btn.svg";
 					}
 				}
 
@@ -53,7 +52,7 @@ const MenuController = class MenuController {
 	};
 
 	hideNavMenu = () => {
-		this.menu.element.style.display = "";
+		this.menu.element.style.display = "none";
 	};
 
 	events = () => {
